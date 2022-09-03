@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <script src="./main.js" defer></script>
-</head>
+  </head>
 
-<body>
-    <h1>Weather Forecasting App</h1>
-    <form>
+  <body>
+    <div class="wrapper">
+      <h1>Weather Forecasting App</h1>
+      <form>
         <label for="location">Choose your location</label>
-        <input type="text" id="location" name="location">
+        <input type="text" id="location" name="location" />
         <button type="button" id="start">Start</button>
-    </form>
-    <div>
+      </form>
+      <div>
         <p>Weather: <span id="weather"></span></p>
         <p>Temperature: <span id="temp"></span></p>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

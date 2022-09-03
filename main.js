@@ -39,4 +39,11 @@ function displayWeather() {
   });
 }
 
-function getIllustration(weather) {}
+async function getIllustration(weather) {
+  const response = await fetch(
+    `https://api.giphy.com/v1/gifs/translate?api_key=${GIPHY_KEY}&s=${weather}`,
+    { mode: "cors" }
+  );
+  const imageData = await response.json();
+  console.log(imageData.data.images.original.url);
+}

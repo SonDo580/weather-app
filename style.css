@@ -73,3 +73,13 @@ p {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+.illustration {
+    height: 250px;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}

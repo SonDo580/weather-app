@@ -3,6 +3,7 @@ const GIPHY_KEY = "AdaPGYNfBgmb9TU4RleQTI8KoEvD9pXA";
 
 const weatherDisplay = document.querySelector("#weather");
 const tempDisplay = document.querySelector("#temp");
+const illustrator = document.querySelector(".illustration img");
 
 const startButton = document.querySelector("#start");
 startButton.addEventListener("click", displayWeather);
@@ -36,6 +37,10 @@ function displayWeather() {
     const { weather, temp } = data;
     weatherDisplay.textContent = weather;
     tempDisplay.textContent = temp;
+
+    // getIllustration(weather).then(url => {
+
+    // })
   });
 }
 

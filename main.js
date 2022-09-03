@@ -38,9 +38,9 @@ function displayWeather() {
     weatherDisplay.textContent = weather;
     tempDisplay.textContent = temp;
 
-    // getIllustration(weather).then(url => {
-
-    // })
+    getIllustration(weather).then((url) => {
+      illustrator.src = url;
+    });
   });
 }
 

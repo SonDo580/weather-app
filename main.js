@@ -45,5 +45,5 @@ async function getIllustration(weather) {
     { mode: "cors" }
   );
   const imageData = await response.json();
-  console.log(imageData.data.images.original.url);
+  return imageData.data.images.original.url;
 }

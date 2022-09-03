@@ -1,4 +1,5 @@
-const API_KEY = "a23a2e333fd2e4f2e40a854e266d7ad2";
+const WEATHER_KEY = "a23a2e333fd2e4f2e40a854e266d7ad2";
+const GIPHY_KEY = "AdaPGYNfBgmb9TU4RleQTI8KoEvD9pXA";
 
 const weatherDisplay = document.querySelector("#weather");
 const tempDisplay = document.querySelector("#temp");
@@ -12,7 +13,7 @@ const unitInput = document.querySelector("#unit");
 async function getWeatherData(location, unit) {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${WEATHER_KEY}&units=${unit}`
     );
     const data = await response.json();
     return getNeededData(data);
@@ -37,3 +38,5 @@ function displayWeather() {
     tempDisplay.textContent = temp;
   });
 }
+
+function getIllustration(weather) {}

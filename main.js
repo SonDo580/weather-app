@@ -9,10 +9,10 @@ startButton.addEventListener("click", displayWeather);
 const locationInput = document.querySelector("#location");
 const unitInput = document.querySelector("#unit");
 
-async function getWeatherData(location) {
+async function getWeatherData(location, unit) {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=${unit}`
     );
     const data = await response.json();
     return getNeededData(data);
@@ -31,7 +31,7 @@ function displayWeather() {
   const location = locationInput.value;
   const unit = unitInput.value === 1 ? "metric" : "imperial";
 
-  getWeatherData(location).then((data) => {
+  getWeatherData(location, unit).then((data) => {
     const { weather, temp } = data;
     weatherDisplay.textContent = weather;
     tempDisplay.textContent = temp;

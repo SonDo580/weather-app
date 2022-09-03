@@ -14,9 +14,20 @@
     <div class="wrapper">
       <h1>Weather Forecasting App</h1>
       <form>
-        <label for="location">Choose your location</label>
-        <input type="text" id="location" name="location" />
-        <button type="button" id="start">Start</button>
+        <div class="form-group">
+            <label for="location">Choose your location</label>
+            <input type="text" id="location" name="location" />
+        </div>
+        <div class="form-group">
+            <label for="unit">Choose temperature unit</label>
+            <select name="unit" id="unit">
+                <option value="1" selected>Celsius</option>
+                <option value="2">Fahrenheit</option>
+            </select>
+        </div>
+        <div class="button">
+            <button type="button" id="start">Start</button>
+        </div>
       </form>
       <div>
         <p>-- Weather: <span id="weather"></span></p>

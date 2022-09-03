@@ -1,6 +1,5 @@
 import citiesData from "./world-cities.json" assert { type: "json" };
 const cities = citiesData.map((location) => location.name);
-console.log(cities);
 
 const WEATHER_KEY = "a23a2e333fd2e4f2e40a854e266d7ad2";
 const GIPHY_KEY = "AdaPGYNfBgmb9TU4RleQTI8KoEvD9pXA";
@@ -49,6 +48,7 @@ function displayWeather() {
 
       getIllustration(weather).then((url) => {
         illustrator.src = url;
+        illustrator.style.visibility = "visible";
       });
     })
     .then(() => hideLoading());

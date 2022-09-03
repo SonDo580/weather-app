@@ -28,7 +28,6 @@ function getNeededData(data) {
 
 function displayWeather() {
   const location = locationInput.value;
-  console.log(location);
 
   getWeatherData(location).then((data) => {
     const { weather, temp } = data;

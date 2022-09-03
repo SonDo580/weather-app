@@ -21,6 +21,7 @@ async function getWeatherData(location, unit) {
     const data = await response.json();
     return getNeededData(data);
   } catch (err) {
+    alert("Something's wrong! Check the console for more information!");
     throw err;
   }
 }
@@ -58,6 +59,7 @@ async function getIllustration(weather) {
     const imageData = await response.json();
     return imageData.data.images.original.url;
   } catch (err) {
+    alert("Something's wrong! Check the console for more information!");
     throw err;
   }
 }

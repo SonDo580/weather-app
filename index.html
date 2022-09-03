@@ -13,6 +13,7 @@
   <body>
     <div class="wrapper">
       <h1>Weather Forecasting App</h1>
+
       <form>
         <div class="form-group">
             <label for="location">Choose your location</label>
@@ -29,12 +30,18 @@
             <button type="button" id="start">Start</button>
         </div>
       </form>
+
       <div class="display">
         <p>-- Weather: <span id="weather"></span></p>
         <p>-- Temperature: <span id="temp"></span></p>
       </div>
+
       <div class="illustration">
         <img src="" alt="illustration">
+      </div>
+
+      <div id="loading-container">
+        <div id="loading"></div>
       </div>
     </div>
   </body>

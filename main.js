@@ -30,13 +30,9 @@ function displayWeather() {
   const location = locationInput.value;
   console.log(location);
 
-  getWeatherData(location)
-    .then((data) => {
-      const { weather, temp } = data;
-      weatherDisplay.textContent = weather;
-      tempDisplay.textContent = temp;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  getWeatherData(location).then((data) => {
+    const { weather, temp } = data;
+    weatherDisplay.textContent = weather;
+    tempDisplay.textContent = temp;
+  });
 }

@@ -25,9 +25,11 @@ function getNeededData(data) {
   return { weather, temp };
 }
 
-// function displayWeather() {
-
-//   const { weather, temp } = getCurrentWeather(location);
-// }
+function displayWeather() {
+  const location = locationInput.value;
+  const { weather, temp } = getCurrentWeather(location);
+  weatherDisplay.textContent = weather;
+  tempDisplay.textContent = temp;
+}
 
 getCurrentWeather("hanoi");

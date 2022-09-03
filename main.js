@@ -7,6 +7,7 @@ const startButton = document.querySelector("#start");
 startButton.addEventListener("click", displayWeather);
 
 const locationInput = document.querySelector("#location");
+const unitInput = document.querySelector("#unit");
 
 async function getWeatherData(location) {
   try {

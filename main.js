@@ -29,7 +29,7 @@ function getNeededData(data) {
 
 function displayWeather() {
   const location = locationInput.value;
-  const unit = unitInput.value === 1 ? "metric" : "imperial";
+  const unit = unitInput.value === "1" ? "metric" : "imperial";
 
   getWeatherData(location, unit).then((data) => {
     const { weather, temp } = data;

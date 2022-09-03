@@ -6,6 +6,8 @@ const tempDisplay = document.querySelector("#temp");
 const startButton = document.querySelector("#start");
 startButton.addEventListener("click", getCurrentWeather);
 
+const locationInput = document.querySelector("#location");
+
 // Need: add error handling
 async function getCurrentWeather(location) {
   const response = await fetch(
@@ -22,5 +24,10 @@ function getNeededData(data) {
   const temp = data.main.temp;
   return { weather, temp };
 }
+
+// function displayWeather() {
+
+//   const { weather, temp } = getCurrentWeather(location);
+// }
 
 getCurrentWeather("hanoi");

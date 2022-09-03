@@ -23,13 +23,9 @@ const unitInput = document.querySelector("#unit");
 const loading = document.querySelector(".loading");
 
 const citiesDatalist = document.querySelector("#cities");
-console.log(citiesDatalist);
-// cities.forEach((city) => {
-//   const option = `<option value=${city}>${city}</option>`;
-//   citiesDatalist.innerHTML += option;
-// });
-
-console.log(citiesDatalist);
+citiesOptions.forEach((option) => {
+  citiesDatalist.appendChild(option);
+});
 
 async function getWeatherData(location, unit) {
   try {

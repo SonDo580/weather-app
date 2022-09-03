@@ -1,3 +1,6 @@
+import citiesData from "./world-cities.json" assert { type: "json" };
+console.log(citiesData);
+
 const WEATHER_KEY = "a23a2e333fd2e4f2e40a854e266d7ad2";
 const GIPHY_KEY = "AdaPGYNfBgmb9TU4RleQTI8KoEvD9pXA";
 

@@ -35,15 +35,18 @@ function displayWeather() {
   const location = locationInput.value;
   const unit = unitInput.value === "1" ? "metric" : "imperial";
 
-  getWeatherData(location, unit).then((data) => {
-    const { weather, temp } = data;
-    weatherDisplay.textContent = weather;
-    tempDisplay.textContent = temp;
+  showLoading();
+  getWeatherData(location, unit)
+    .then((data) => {
+      const { weather, temp } = data;
+      weatherDisplay.textContent = weather;
+      tempDisplay.textContent = temp;
 
-    getIllustration(weather).then((url) => {
-      illustrator.src = url;
-    });
-  });
+      getIllustration(weather).then((url) => {
+        illustrator.src = url;
+      });
+    })
+    .then(() => hideLoading());
 }
 
 async function getIllustration(weather) {

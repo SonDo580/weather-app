@@ -1,5 +1,11 @@
 import citiesData from "./world-cities.json" assert { type: "json" };
 const cities = citiesData.map((location) => location.name);
+const citiesOptions = cities.map((city) => {
+  const option = document.createElement("option");
+  option.textContent = city;
+  option.value = city;
+  return option;
+});
 
 const WEATHER_KEY = "a23a2e333fd2e4f2e40a854e266d7ad2";
 const GIPHY_KEY = "AdaPGYNfBgmb9TU4RleQTI8KoEvD9pXA";
@@ -15,6 +21,15 @@ const locationInput = document.querySelector("#location");
 const unitInput = document.querySelector("#unit");
 
 const loading = document.querySelector(".loading");
+
+const citiesDatalist = document.querySelector("#cities");
+console.log(citiesDatalist);
+// cities.forEach((city) => {
+//   const option = `<option value=${city}>${city}</option>`;
+//   citiesDatalist.innerHTML += option;
+// });
+
+console.log(citiesDatalist);
 
 async function getWeatherData(location, unit) {
   try {

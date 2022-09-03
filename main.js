@@ -9,15 +9,11 @@ startButton.addEventListener("click", displayWeather);
 const locationInput = document.querySelector("#location");
 
 async function getWeatherData(location) {
-  try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
-    );
-    const data = await response.json();
-    return getNeededData(data);
-  } catch (err) {
-    throw error;
-  }
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
+  );
+  const data = await response.json();
+  return getNeededData(data);
 }
 
 function getNeededData(data) {
@@ -28,7 +24,13 @@ function getNeededData(data) {
 
 function displayWeather() {
   const location = locationInput.value;
-  const { weather, temp } = getWeather(location);
-  weatherDisplay.textContent = weather;
-  tempDisplay.textContent = temp;
+  getWeatherData(location)
+    .then((data) => {
+      const { weather, temp } = data;
+      weatherDisplay.textContent = weather;
+      tempDisplay.textContent = temp;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }

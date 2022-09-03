@@ -4,7 +4,7 @@ const weatherDisplay = document.querySelector("#weather");
 const tempDisplay = document.querySelector("#temp");
 
 const startButton = document.querySelector("#start");
-startButton.addEventListener("click", getCurrentWeather);
+startButton.addEventListener("click", displayWeather);
 
 const locationInput = document.querySelector("#location");
 

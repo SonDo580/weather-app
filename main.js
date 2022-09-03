@@ -11,6 +11,8 @@ startButton.addEventListener("click", displayWeather);
 const locationInput = document.querySelector("#location");
 const unitInput = document.querySelector("#unit");
 
+const loading = document.querySelector(".loading");
+
 async function getWeatherData(location, unit) {
   try {
     const response = await fetch(
@@ -55,4 +57,12 @@ async function getIllustration(weather) {
   } catch (err) {
     throw err;
   }
+}
+
+function showLoading() {
+  loading.style.display = "flex";
+}
+
+function hideLoading() {
+  loading.style.display = "none";
 }
